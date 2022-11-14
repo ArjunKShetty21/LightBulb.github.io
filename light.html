@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Bulb</title>
+    <style>
+        .center{
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+        .centerBtn{
+            padding: 1%;
+            background-color: chartreuse;
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+           
+        }
+        .yo{
+            padding: auto;;
+        }
+    </style>
+   
+</head>
+<body style="background-color:black">
+    <div>
+    <img id="bulbState"src="images/bulb-off.png" alt=""class="center" width="190px">
+</div>
+<br>
+   <div class="yo">
+     <button id="toggleBtn"class="centerBtn">Turn ON!</button>
+    </div>
+    <script>
+        let btn =document.getElementById('toggleBtn');
+        let bulb =document.getElementById('bulbState');
+        document.addEventListener('click',toggleBulb);
+
+        function toggleBulb(e){
+            if(btn.textContent.includes('On'))
+            {
+                bulb.src="images/bulb-off.png";
+                btn.textContent="Turn Off";
+            }
+            else
+            {
+                bulb.src="images/bulb-on.png";
+                btn.textContent="Turn On";
+            }
+        }
+    </script>
+</body>
+</html>
